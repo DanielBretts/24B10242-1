@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_Panel"
+    android:background="@drawable/bg">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:gravity="center"
+        android:textColor="@color/title_color"
+        android:layout_centerHorizontal="true"
+    android:text="@string/app_name"/>
+
+    <include
+        android:id="@+id/include_matches_watched"
+        layout="@layout/component_matches_watched"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewTitle"
+        android:layout_centerHorizontal="true" />
+
+
+    <LinearLayout
+        android:id="@+id/TF_teams"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/include_matches_watched"
+        android:orientation="horizontal"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp">
+        <EditText
+            android:id="@+id/team1EditText"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:maxLines="1"
+            android:minLines="1"
+            android:layout_height="wrap_content"
+            android:hint="Home Team"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:background="@android:color/white"
+            android:layout_marginBottom="10dp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="0dp"/>
+
+        <EditText
+            android:id="@+id/team2EditText"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:maxLines="1"
+            android:minLines="1"
+            android:layout_height="wrap_content"
+            android:hint="Away Team"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:background="@android:color/white"
+            android:layout_marginBottom="10dp" />
+
+    </LinearLayout>
+
+    <!-- Submit button -->
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_below="@id/TF_teams"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <!-- ListView to display games -->
+    <ListView
+        android:id="@+id/gamesListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/submitButton"
+        android:layout_marginTop="20dp"
+        android:dividerHeight="1dp" />
+
+</RelativeLayout>
